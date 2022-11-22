@@ -11,6 +11,7 @@ public class Item implements Serializable {
     public byte[] image;
     public String imageName;
     public double cost;
+    public String currencyCode = "ZAR";
     public int quantity;
 
     public Item(String name, String description, byte[] image, String imageName, double cost, int quantity) {

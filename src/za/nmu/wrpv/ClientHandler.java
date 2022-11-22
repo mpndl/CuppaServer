@@ -49,6 +49,7 @@ public class ClientHandler {
 
                 }while (true);
             } catch (IOException | ClassNotFoundException e) {
+                ClientHandler.this.stop();
                 e.printStackTrace();
             }
             finally {

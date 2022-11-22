@@ -1,18 +1,14 @@
 package za.nmu.wrpv.messages;
 
 import za.nmu.wrpv.ClientHandler;
-import za.nmu.wrpv.Item;
 import za.nmu.wrpv.Order;
 import za.nmu.wrpv.XMLHandler;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.Serial;
 import java.io.Serializable;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -21,7 +17,7 @@ public class OrderPublish extends Publish implements Serializable {
     private final static long serialVersionUID = 41L;
     public static final String key = "order";
     public static Map<String, Thread> ackTreads = new ConcurrentHashMap<>();
-    public static final long sleepDuration = 5000;
+    public static final long sleepDuration = 10000;
 
     public OrderPublish(Object publisher, String topic, Map<String, Object> params) {
         super(publisher, topic, params);
@@ -49,11 +45,8 @@ public class OrderPublish extends Publish implements Serializable {
             }catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            finally {
-                System.out.println(">>> Order "+ publisher +" Acknowledged -> " + handler.getClientID());
-            }
         });
-        ackTreads.put(publisher + "", ackTread);
+        ackTreads.put(publisher + "" + handler.getClientID(), ackTread);
         System.out.println(">>> Processing Order " + publisher);
         ackTread.start();
     }

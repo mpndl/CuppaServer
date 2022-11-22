@@ -11,4 +11,5 @@ public class MenuItems {
     public static List<Item> getItems() {
         return items;
     }
+    public static void clear() {items.clear();}
 }

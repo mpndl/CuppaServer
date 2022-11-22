@@ -18,11 +18,12 @@ public class OrderAcknowledgedPublish extends Publish implements Serializable {
     @Override
     public void apply(ClientHandler handler) {
         System.out.print(">>> Seeking Thread For Order " + publisher + " -> ");
-        System.out.println(OrderPublish.ackTreads.get(publisher.toString()));
+        System.out.println(OrderPublish.ackTreads.get(publisher + "" + handler.getClientID()));
 
-        if (OrderPublish.ackTreads.containsKey(publisher.toString())) {
-            OrderPublish.ackTreads.get(publisher.toString()).interrupt();
-            OrderPublish.ackTreads.remove(publisher.toString());
+        if (OrderPublish.ackTreads.containsKey(publisher + "" + handler.getClientID())) {
+            System.out.println(">>> Order "+ publisher +" Acknowledged -> " + handler.getClientID());
+            OrderPublish.ackTreads.get(publisher + "" + handler.getClientID()).interrupt();
+            OrderPublish.ackTreads.remove(publisher + "" + handler.getClientID());
         }
     }
 }

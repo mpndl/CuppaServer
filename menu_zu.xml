@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<items>
+	<item>
+		<name>Cappuccino</name>
+		<description>Isiphuzo sekhofi esisekelwe ku-espresso.</description>
+		<imageName>cappuccino.jpg</imageName>
+		<cost>12.15</cost>
+	</item>
+	<item>
+		<name>Latte</name>
+		<description>isibhamu se-espresso nobisi olushunqisiwe ngokuthinta nje igwebu.</description>
+		<imageName>latte.jpg</imageName>
+		<cost>13.15</cost>
+	</item>
+	<item>
+		<name>Americano</name>
+		<description>Isibhamu se-espresso esihlanjululwe emanzini ashisayo.</description>
+		<imageName>americano.jpg</imageName>
+		<cost>11.15</cost>
+	</item>
+	<item>
+		<name>Espresso</name>
+		<description>Isibhamu se-espresso singanikezwa sodwa noma sisetshenziswe njengesisekelo.</description>
+		<imageName></imageName>
+		<cost>12.15</cost>
+	</item>
+	<item>
+		<name>Doppio</name>
+		<description>Ishothi eliphindwe kabili le-espresso.</description>
+		<imageName></imageName>
+		<cost>9.15</cost>
+	</item>
+	<item>
+		<name>Cortado</name>
+		<description>I-cortado ibhalansi ephelele ye-espresso nobisi olufudumele olushisayo.</description>
+		<imageName></imageName>
+		<cost>19.15</cost>
+	</item>
+	<item>
+		<name>Red Eye</name>
+		<description>Inkomishi egcwele yekhofi elishisayo eneshothi ye-espresso exutshwe kuyo.</description>
+		<imageName></imageName>
+		<cost>14.15</cost>
+	</item>
+	<item>
+		<name>Galão</name>
+		<description>Ihlobene eduze ne-latte ne-cappuccino kodwa iqukethe cishe ubisi olunegwebu oluphindwe kabili.</description>
+		<imageName></imageName>
+		<cost>13.15</cost>
+	</item>
+	<item>
+		<name>Lungo</name>
+		<description>I-lungo i-espresso edonsa isikhathi eside.</description>
+		<imageName></imageName>
+		<cost>17.15</cost>
+	</item>
+	<item>
+		<name>Macchiato</name>
+		<description>Indawo ejabulisayo phakathi kwe-cappuccino ne-doppio.</description>
+		<imageName></imageName>
+		<cost>16.15</cost>
+	</item>
+</items>
