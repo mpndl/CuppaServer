@@ -1,0 +1,1 @@
+"%JAVA_HOME%"\bin\java.exe -cp CuppaServer.jar za/nmu/wrpv.Launcher -jar CuppaServer.jar
