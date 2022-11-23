@@ -25,13 +25,19 @@ public class MenuPublish extends Publish implements Serializable {
             if (XMLHandler.fileExists("menu_"+language+".xml"))
                 fileName = "menu_"+language+".xml";
 
+        Rate rate = getRate("xrates.csv", code);
         MenuItems.clear();
-        XMLHandler.loadMenuFromXML(fileName, getRate("xrates.csv", code));
+        XMLHandler.loadMenuFromXML(fileName, rate);
         Map<String, Object> params = new HashMap<>();
-        System.out.println(MenuItems.getItems().size());
-        params.put(key, MenuItems.getItems());
+        params.put(key, Item.clone(MenuItems.getItems()));
         Message<ClientHandler> message = new MenuPublish(null, topic, params);
         handler.publish(message);
+
+        String rDescription;
+        if (rate == null) rDescription = "S.A. Rands";
+        else rDescription = rate.description;
+
+        System.out.println("MENU(" + fileName + ", " + rDescription + ") -> language = " + language + ", currency code = " + code);
     }
 
     public Rate getRate(String file, String code)
