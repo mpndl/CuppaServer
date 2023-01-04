@@ -27,7 +27,7 @@ public class OrderPublish extends Publish implements Serializable {
     public void apply(ClientHandler handler) {
         Order order = (Order)params.get(key);
         System.out.println(">>> Order " + publisher + " Received");
-        order.items.stream().forEach(item -> System.out.println("\t" + item.name + " -> subtotal=" + item.cost * item.quantity));
+        order.items.forEach(item -> System.out.println("\t" + item.name + " -> subtotal=" + item.cost * item.quantity));
         System.out.println("\tTOTAL=" + order.total);
         try {
             XMLHandler.appendToXML(order);
